@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width>, initial-scale=1.0">
-
+   
     <title>Calculadora</title>
   
     <style>
+        .calculadora{
+            position: absolute;           
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+        }
         body {
-            background-color: cadetblue;
+            background-color: rgba(52, 48, 100, 0.899);
+        }
+        h1{
+            color: rgb(0, 0, 0);
+            margin-left: 35%;
+            font-size: 50px;
+            
+        }
+        botao{
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 3px;
+            background-color: rgb(31,31,31);
+            border: none;
+            color: #fff;
+        }
+
+        .fundo{
+            background-image: linear-gradient(45de crimson);
+            height: 30vh;
+            text-align: center;
+        }
+
+        resul{
+            bottom: 50%;
+            margin left: 50%;
         }
     </style> 
 
@@ -17,26 +51,61 @@
 
 <body>
 
-    <h1>Calculadora</h1>
-    
+    <h1>Calculadora Do william</h1>
+
+    <div class ="calculadora"> 
+
     <form>
-        <input id="num1" type="text"></input>
-        <input id="num2"  type="text"></input>
-        <button type="button" onclick="somar()">Somar </button>
-        <input id="soma" type="text" disabled></input>
+        <div class ="fundo">
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+        <button type="button" onclick="operacao('+')">Somar</button>
+        
+        <button type="button" onclick="operacao('/')">Dividir </button>
+        
+        <button type="button" onclick="operacao('-')">Subtrair </button>
+        
+        <button type="button" onclick="operacao('*')">Mutiplicar </button>
+       
+        <input type="text" disabled id="resultado"/>
+    </div>
     </form>
 
-    <script>
-         function somar(){
+</div>
+ 
+   
 
-           var num1,num2,soma;
-           num1 = parseFloat(document.getElementById("num1").value);
-           num2 = parseFloat(document.getElementById("num2").value);
-           soma = num1 + num2;
-          document.getElementById("soma").value = soma;
+
+    <script>
+         function operacao(op){
+           var num1 = parseFloat(document.getElementById("num1").value);
+           var num2 = parseFloat(document.getElementById("num2").value);
+           var resultado = document.getElementById("resultado")
+           var resultado_conta;
+           
+            switch (op) {
+
+                case "+":
+                resultado_conta = num1 + num2;
+                break;
+
+                case "-":
+                resultado_conta = num1 - num2;
+                break;
+
+                case "*":
+                resultado_conta = num1 * num2;
+                break;
+
+                case "/":
+                resultado_conta = num1 / num2;
+                break;
+            }
+
+            resultado.value = resultado_conta; 
 
          }
-    </script>
+        </script>
 
 </body>
 </html>
