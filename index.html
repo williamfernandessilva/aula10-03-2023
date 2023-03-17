@@ -14,6 +14,10 @@
             left: 50%;
             transform: translate(-50%,-50%);
             padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 50px;
+            border-radius: 10px;
+            
         }
         body {
             background-color: rgba(52, 48, 100, 0.899);
@@ -22,6 +26,11 @@
             color: rgb(0, 0, 0);
             margin-left: 35%;
             font-size: 50px;
+            
+        }
+
+        h3{
+            font-size: 35px;
             
         }
         botao{
@@ -39,12 +48,30 @@
             background-image: linear-gradient(45de crimson);
             height: 30vh;
             text-align: center;
+
+            
         }
 
-        resul{
-            bottom: 50%;
-            margin left: 50%;
+        input{
+            
+            font-size: 30px;
+            border-radius: 10px;
         }
+
+        button{
+            font-size: 30px;
+            border-radius: 10px;
+        }
+        #resultado{
+                color: white;
+        }
+
+        div{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+      
     </style> 
 
 </head>
@@ -55,21 +82,28 @@
 
     <div class ="calculadora"> 
 
-    <form>
+    <h3> Digite a soma </h3>
         <div class ="fundo">
         <input type="text" id="num1">
+        <br><br>
         <input type="text" id="num2">
-        <button type="button" onclick="operacao('+')">Somar</button>
+        <br><br>
+        <button type="button" onclick="operacao('+')">+</button>
         
-        <button type="button" onclick="operacao('/')">Dividir </button>
+        <button type="button" onclick="operacao('/')">/ </button>
         
-        <button type="button" onclick="operacao('-')">Subtrair </button>
+        <button type="button" onclick="operacao('-')">- </button>
         
-        <button type="button" onclick="operacao('*')">Mutiplicar </button>
-       
+        <button type="button" onclick="operacao('*')">* </button>
+        <br><br>
+        
+        
         <input type="text" disabled id="resultado"/>
+        
+
+
     </div>
-    </form>
+    
 
 </div>
  
